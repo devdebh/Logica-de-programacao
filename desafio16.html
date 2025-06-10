@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua morte</title>
+
+<style>
+
+   *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .fundo 
+    {
+        background-image: linear-gradient(45deg,rgb(75,75,75),rgb(55,6,6));
+        background-position: 100%;
+        background-size: cover;
+        height: 100vh;
+    }
+
+
+    h1 
+    { 
+        color: rgb(193, 38, 38);
+        text-shadow: 0 0 7px rgb(55, 6, 6);
+        text-align: center;
+    }
+
+    h2
+    {
+        
+        color: rgb(241, 48, 48);
+        text-shadow: 0 0 4px rgb(55, 6, 6);
+        text-align: center;
+
+
+    }
+
+
+    h4 
+    
+    {
+    
+        color: purple;
+        text-shadow: 0 0 7px rgb(48, 6, 55);
+        text-align:center;
+
+    }
+
+    .calculadora 
+    {
+        background-color: rgb(255, 255, 255);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 400px;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+        
+    }
+
+    button 
+    {
+        background-color: rgb(151, 20, 20);
+        color: white;
+        border: none;
+        padding: 20px 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+</style>
+
+
+</head>
+<body>
+
+ <div class="fundo"><h1>Cálculo da morte</h1>
+     <!-- colocar emoji -->
+<h4 title = "sua dev"><em>por Déborah Nascimento</em></h4> 
+<!-- alinhar a esquerda -->
+
+<h2> Apague o cigarro, acenda a vida </h2> <br>
+<!--  Mensagem de conscientização -->
+
+<div class="calculadora">
+<form id="anosPerdidos">
+    <label for="cigarrosPorDia">Quantos cigarros você fuma por dia?</label> <br>
+    <br>
+    <input type="number"id="cigarrosPorDia" name="cigarrosPorDia" required> <br>
+    <br>
+
+    <label for="anosFumando">Há quantos anos você fuma?</label> <br>
+    <input typer="number" id="anosFumando" nome="anosFumando" required> <br>
+    <br>
+    <button type="button" onclick="calcularAnosPerdidos()"><strong>VIDA PERDIDA</strong></button> <!--Botão para calcular os anos perdidos, onclick =  -->
+
+</form> <br>
+    <div class="resultados">
+
+    </div>
+    
+</div>
+
+<script>
+
+    function calcularAnosPerdidos() {
+        const cigarrosPorDia = document.getElementById('cigarrosPorDia').value;
+        const anosFumando = document.getElementById('anosFumando').value;
+        
+        const diasDeVidaPerdidos = ((cigarrosPorDia * 10) + (anosFumando * 365.25 * 1440)/1440);
+        
+
+        const resultadosDiv = document.querySelector('.resultados');
+        resultadosDiv.innerHTML = `<p>Você perdeu aproximadamente <strong>${diasDeVidaPerdidos.toFixed(2)}</strong> dias de vida <strong>JOGADOS FORA!</strong></p>`;
+      
+    }
+</script> <br>
+<br>
+
+<h1> Não deixe seu futuro virar fumaça </h1>
+<!-- FIM  -->
+</div>
+</body>
+</html>
